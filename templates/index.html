@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+  <title>Kattakurgan.UZ</title>
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+  <!-- <div class="main-posts"> -->
+{% block content %}
+{% endblock content %}
+
+  <footer style="background-color: #222 ; ">
+    <div class="centeru line-for">
+      <div class="navbar-1 wrap">
+        <div class="menu-1 local">
+          <a href="{% url 'home' %}">Bosh Sahifa</a>
+          <a href=""></a>
+          <a href="Qoidalar.html">Qoidalar</a>
+          <a href="#odam">Footer</a>
+        </div>
+        <div class="social-media">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-telegram"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+    </div>
+    <div class="centeru" id="odam">
+      <p class="developers">©️ <a href="https://t.me/Sherozbek_17/" target="_blank">She'rozbek</a> and <a
+          href="https://t.me/Isroil2006/" target="_blank">Isroil</a> Developer</p>
+    </div>
+  </footer>
+
+  <script src="../static/js/main.js"></script>
+</body>
+
+</html>

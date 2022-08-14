@@ -1,0 +1,42 @@
+.card-body{
+	margin: 0 auto;
+	width: 80%;
+	display: flex; 
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+}
+.card-body img{
+	margin: 40px;
+}
+.card-body h1{
+	padding: 10px;
+	font-size: 40px;
+	font-weight: 800;
+	letter-spacing: 3px;
+}
+.card-body p{
+	padding: 20px;
+	font-weight: bold;
+	font-size: 25px;
+}
+.card-body button, a{
+	display: inline-block;
+}
+.card1{
+	width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.card1 button{
+	width: 30%;
+	background-color: #091921;
+	border-radius: 5px;
+	padding: 10px;
+}
+.card1 button a{
+	color: #fff;
+
+}

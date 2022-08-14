@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% block content %}
+{% for category in categories %}
+
+<div class="centeru">
+    <div class="tab-name">
+      <div class="svg">
+        <div class="on"></div>
+      </div>
+      <p>{{category.name}}</p>
+    </div>
+
+  </div>
+
+
+
+<div class="container">
+    <div class="main min">
+      <main class="main-blog-section">
+        <section class="blog section">
+          <!-- <div class="container"> -->
+
+
+          <div class="blog-wrapper">
+            <div class="blog-wrap">
+              {% for post in posts %}
+              {% if  post.category.id == category.id %}
+              <div class="blog-card">
+                <div class="blog-image">
+                    <img src="{{post.rasm}}" alt="" />
+                </div>
+
+                <div class="blog-content">
+                  <div class="blog-info">
+                    <h5 class="blog-date">{{post.created}} </h5>
+                    <h5 class="blog-user"><i class="fas fa-user"></i>{{user.username}}</h5>
+                  </div>
+                  <h3>{{post.title}}</h3>
+                  <p>{{post.body | slice:":40"}}...</p>
+                  <a href="{% url 'body' post.id %}" class="btn small">To'liq Ko'rish</a>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+
+            </div>
+          </div>
+    </div>
+    </section>
+    </main>
+  </div>
+{% endfor %}
+
+
+  
+
+ 
+  </div>
+{% endblock content %}

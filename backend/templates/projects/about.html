@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    <title></title>
+    <style type="text/css">
+        div{
+            border: 1px solid red;
+        }
+        div h1{
+            color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    <div class="card-body">
+        <h1>{{body.title}}</h1>
+    <img src="{{body.rasm}}" alt=""width="700px">
+
+    <p>
+        {{body.body}}
+    </p>
+    <h3>{{body.created}}</h2>
+
+    {% if user.is_superuser %}
+   <div class="card1">
+        <button><a href="{% url 'post_edit' body.pk %}">Tahrirlash</a></button>
+        <button><a href="{% url 'post_delete' body.pk %}">O'chirish</a></button>
+    
+   </div>
+    {% endif %}
+    </div>
+    
+    
+    {% endblock content %}
+</body>
+</html>

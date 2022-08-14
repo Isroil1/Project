@@ -1,0 +1,52 @@
+
+<hr>
+<header>
+    <div class="centeru">
+      <div class="navbar-1  wrap">
+        <div class="menu-1">
+          <a href="{% url 'home' %}">Bosh Sahifa</a>
+          <a href="#">Reklama</a>
+          <a href="Qoidalar.html">Video</a>
+          <a href="#odam">Footer</a>
+        </div>
+        {% if user.is_superuser %}
+<a href="{% url 'post_new' %}">Post_new</a>
+
+<p>{{ user.username }} Saytga xush kelibsiz</p> 
+<a href="{% url  'logout' %}">Chqib ketish</a>
+{% endif %}
+        <div class="social-media">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-telegram"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="logo">
+      <p>Kattakurgan<span>.</span>UZ</p>
+    </div>
+    <div class="centeru responsive">
+      <div class="navbar-2">
+        <div class="menu-1">
+            {% for category in categories %}
+
+            <a href="#">{{category.name}}</a>
+            {% endfor %}
+          
+        </div>
+      </div>
+    </div>
+    <div class="centeru clone">
+      <div class="navbar-2">
+        <div class="menu-1">
+            {% for category in categories %}
+
+            <a href="{% url 'home' %}?category={{category.name}}">{{category.name}}</a>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </header>
+ 
